@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if IE]>
+<script type="text/javascript" src="css/js/html5.min.js"></script>
+<![endif]-->
+<link href="css/main.css?v1.0" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="css/js/jquery.min.js"></script>
+<script type="text/javascript" src="css/js/jquery.scrollUp.min.js"></script>
+<script type="text/javascript" src="css/js/jquery.appear.js"></script>
+<script type="text/javascript" src="css/js/jquery.countTo.js"></script>
+<script type="text/javascript" src="css/js/js.js"></script>
+<title>T恤售卖</title>
+</head>
+<body class="t-shirt">
+    <header>
+    </header>
+<article id="main">
+    <div class="w300">
+    <div class="topImg mb10">
+    <div id="slider" class="swipe" style="visibility: visible;">
+      <div class="swipe-wrap">
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="images/t-shirt/white.png" alt=""></a>
+          </div>
+        </figure>
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="images/t-shirt/red.png" alt=""></a>
+          </div>
+        </figure>
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="images/t-shirt/black.png" alt=""></a>
+          </div>
+        </figure>
+      </div>
+    </div>
+    <nav>
+      <ul id="position" style="display:block">
+        <li class="on t-w"></li>
+        <li class="t-r"></li>
+        <li class="t-b"></li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+<div class="ovh ml10 t-right">
+<h1 class="mb10"><img src="images/t-shirt/title.png" alt=""></h1>
+<p class="t-slo">对就疯狂的尽快将疯狂据的开发及</p>
+<h2 class="mb20">全场两件<span class="cr" style="vertical-align: top;font-size: 30px;margin: 0 5px;">8</span>折，三色可选！</h2>
+<div class="t-item"><span>价格</span><b class="f24 cr dib" style="margin-top:-4px">￥80.00</b></div>
+<div class="t-item"><span>尺码</span><div class="dib w330"><div class="t-size sel"><b></b>165/XL</div><div class="t-size"><b></b>175/XXL</div><div class="t-size"><b></b>165/XXXL</div><div class="t-size"><b></b>165/XXXL</div></div></div>
+<div class="t-item"><span>颜色</span><div class="t-color t-w sel"><b></b></div><div class="t-color t-r"><b></b></div><div class="t-color t-b"><b></b></div></div>
+<div class="t-item"><span>数量</span><div class="mr5 dib vam mtf4"><i class="min"></i>
+            <input type="text" value="1" size="8" class="tc h33">
+    <i class="add"></i></div></div>
+<div class="t-item"><div class="dib pct100"><input type="button" value="购买" class="btn pct100" onclick="javascript:location.href='address.html';"></div></div>
+</div>
+  <section class="content">
+  <img src="images/t-shirt/55179393N877b078e.jpg" alt="" class="pct100">
+  <img src="images/t-shirt/55179394Nc8069c66.jpg" alt="" class="pct100">
+  <img src="images/t-shirt/55179394Nf355a73a.jpg" alt="" class="pct100">
+  <img src="images/t-shirt/55179396N640eeb00.jpg" alt="" class="pct100">
+  <img src="images/t-shirt/55179397Nb6ebd32d.jpg" alt="" class="pct100">
+</section>
+    <!--以下是页脚内容-->
+<footer>Copyright 2015 Tiens All rights reserved</footer>
+</article>
+<script src="css/js/swipe.js"></script>
+<script>
+var slider =
+  Swipe(document.getElementById('slider'), {
+    auto: 3000,
+    continuous: true,
+    callback: function(pos) {
+      var i = bullets.length;
+      while (i--) {
+				bullets[i].className = bullets[i].className.split('on ').join("");
+      }
+      bullets[pos].className = 'on '+bullets[pos].className;
+    }
+  });
+var bullets = document.getElementById('position').getElementsByTagName('li');
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "ExpressApp",
+  "version": "0.0.1",
+  "description": "A Node.js App using express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "express3-handlebars": "^0.5.2"
+  },
+  "engines": {
+    "node": "4.4.2"
+  }
+}
