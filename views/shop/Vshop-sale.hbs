@@ -1,0 +1,105 @@
+<body class="t-shirt">
+<header style="background:#D1D1D1"></header>
+<article id="main">
+    <div class="w300">
+    <div class="topImg mb10">
+    <div id="slider" class="swipe" style="visibility: visible;">
+      <div class="swipe-wrap">
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="/images/t-shirt/white.png" alt=""></a>
+          </div>
+        </figure>
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="/images/t-shirt/red.png" alt=""></a>
+          </div>
+        </figure>
+        <figure>
+          <div class="wrap">
+            <a class="image"><img src="/images/t-shirt/black.png" alt=""></a>
+          </div>
+        </figure>
+      </div>
+    </div>
+    <nav>
+      <ul id="position" style="display:block">
+        <li class="on t-w"></li>
+        <li class="t-r"></li>
+        <li class="t-b"></li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+<div class="ovh ml10 t-right">
+<h1 class="mb10"><img src="/images/t-shirt/title2.png" alt=""></h1>
+<p class="t-slo b">7月15日统一发货</p>
+<h2 class="mb20 cr">仅供2000组，限量秒杀</h2>
+<div class="cr f24">
+    <span >活动仅剩：</span>
+    <span id="t_d">00天</span>
+    <span id="t_h">00时</span>
+    <span id="t_m">00分</span>
+    <span id="t_s">00秒</span>
+    <!--<span id="t_ms">00毫秒</span>-->
+  </div>
+
+<div class="t-item f16"><p>大健康浪费时间阿两地分居了，的积分睡懒觉了，发电机斯科拉解放路，发动机上拉法基楼。</p></div>
+<div class="t-item"><span>价格</span><b class="f24 cr dib" style="margin-top:-4px">￥80.00</b></div>
+<div class="t-item"><span>数量</span><div class="mr5 dib vam mtf4"><i class="min"></i>
+            <input type="text" value="1" size="8" class="tc h33">
+    <i class="add"></i></div></div>
+<div class="t-item"><div class="dib pct100"><input type="button" value="购 买" class="btn pct100 f20" onclick="javascript:location.href='/shop/address';"></div></div>
+</div>
+  <section class="content">
+  <img src="/images/t-shirt/55179393N877b078e.jpg" alt="" class="pct100">
+  <img src="/images/t-shirt/55179394Nc8069c66.jpg" alt="" class="pct100">
+  <img src="/images/t-shirt/55179394Nf355a73a.jpg" alt="" class="pct100">
+  <img src="/images/t-shirt/55179396N640eeb00.jpg" alt="" class="pct100">
+  <img src="/images/t-shirt/55179397Nb6ebd32d.jpg" alt="" class="pct100">
+</section>
+    <!--以下是页脚内容-->
+<footer>Copyright 2015 Tiens All rights reserved</footer>
+</article>
+<script src="/js/swipe.js"></script>
+<script>
+var slider =
+  Swipe(document.getElementById('slider'), {
+    auto: 3000,
+    continuous: true,
+    callback: function(pos) {
+      var i = bullets.length;
+      while (i--) {
+				bullets[i].className = bullets[i].className.split('on ').join("");
+      }
+      bullets[pos].className = 'on '+bullets[pos].className;
+    }
+  });
+var bullets = document.getElementById('position').getElementsByTagName('li');
+</script>
+<script>
+  function GetRTime(){
+    var EndTime= new Date('2016/08/16 00:00:00:00');
+    var NowTime = new Date();
+    var t =EndTime.getTime() - NowTime.getTime();
+    var d=0;
+    var h=0;
+    var m=0;
+    var s=0;
+		var ss=0;
+    if(t>=0){
+      d=Math.floor(t/1000/60/60/24);
+      h=Math.floor(t/1000/60/60%24);
+      m=Math.floor(t/1000/60%60);
+      s=Math.floor(t/1000%60);
+			ms=Math.floor(t/100%10);
+    }
+    document.getElementById("t_d").innerHTML = d + "天";
+    document.getElementById("t_h").innerHTML = h + "时";
+    document.getElementById("t_m").innerHTML = m + "分";
+    document.getElementById("t_s").innerHTML = s + "秒";
+//		document.getElementById("t_ms").innerHTML = ms + "";
+  }
+  setInterval(GetRTime,0);
+</script>
+</body>
