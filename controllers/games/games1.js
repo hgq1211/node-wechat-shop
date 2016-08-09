@@ -1,7 +1,7 @@
-/**
- * Created by Administrator on 2016/8/9.
- */
-exports.get = function (req, res, next) {
-    res.render('./games/games1');
-    //res.json('ee');
-};
+// GET /user
+	exports.get = {
+		url: '/games1',
+		handler: function (req, res, next) {
+			res.render('games/games1',{title:"商城"})
+		}
+	};

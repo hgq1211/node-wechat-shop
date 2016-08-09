@@ -1,0 +1,38 @@
+<body>
+<article id="main">
+  {{> nav}}
+  <section class="content">
+    <header>
+      <div class="h38 rel pl10 pr10 bline"><a href="#" id="menu"></a> <div class="Logo"><p class="f16">我的云微店</p><p class="f12">Beta Version 1.0.1</p></div><a href="Vshop-ranking.html" id="lv">LV10</a>
+<!--<a href="#" id="cai">全部商品</a>--></div>
+      <nav id="nav"><a href="/"><span>V-shop Name 1</span></a><a href="../index.hbs"><span>V-shop Name 2</span></a><a href="../index.hbs"><span>V-shop Name 3</span></a><a href="../index.hbs"><span>V-shop Name 4</span></a></nav>
+    </header>
+    <!--以下是页面内容-->
+    <div class="p10 mt10">
+      <h1 class="title2">请输入以下信息验证并激活开通您的云微店</h1>
+      <div class="cBox"> 
+        <div class="mb10"><span class="tx">手机号码：</span>
+          <input type="text" placeholder="请输入您的手机号码"  class="txtShort">
+        </div>
+        <div class="mb10"><span class="tx">微店申请激活码：</span>
+          <input type="text" placeholder="请输入您的微店申请激活码"  class="txtShort">
+          <!--<p class="error">验证码输入失败！</p>--></div>
+        <div class="mb10"><span class="tx">验证码：</span>
+          <input type="text" placeholder="请输入验证码" class="txtLong">
+        </div>
+        <input type="button" value="点此激活开通我的云微店" class="btn mt10 db pct100">
+      </div>
+      <p class="tr"><a href="#">新手须知</a></p>
+      <p><input type="button" value="没有注册码点此注册" class="btn mt10 db pct100"></p>
+      <div class="cBox">
+      <h1 class="title2 mb10 tc"><img src="css/images/cg.jpg" alt=""><br>恭喜您！您的个人云微店已经成功的激活开通。</h1>
+      <h1 class="title2">当前有效期为 2015年3月31日 ～ 2016年3月30日，感谢您选择使用天狮个人云微店系统。</h1>
+        <input type="button" value="点此开始创建个性化产品组合" class="btn mt10 db pct100">
+      </div>
+
+    </div>
+    <!--以下是页脚内容-->
+   {{> footer}}
+  </section>
+</article>
+</body>

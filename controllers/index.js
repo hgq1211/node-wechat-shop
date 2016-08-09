@@ -1,10 +1,6 @@
-/**
- * Created by Administrator on 2016/8/8.
- */
-//var userService = require('../../services/userService');
-
-// GET /index
+// GET /user
 exports.get = function (req, res, next) {
-    res.render('./index');
-    //res.json('ee');
+	res.render('index',{
+		title:"你好"
+	})
 };

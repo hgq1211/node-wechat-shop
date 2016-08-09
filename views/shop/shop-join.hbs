@@ -1,0 +1,53 @@
+<body>
+<article id="main">
+  {{> nav}}
+  <section class="content">
+    <header>
+      <div class="h38 rel pl10 pr10 bline"><a href="#" id="menu"></a> <a href="#" id="cai">全部商品</a></div>
+      <nav id="nav"><a href="../"><span>V-shop Name 1</span></a><a href="../index.hbs"><span>V-shop Name 2</span></a><a href="../index.hbs"><span>V-shop Name 3</span></a><a href="../index.hbs"><span>V-shop Name 4</span></a></nav>
+    </header>
+    <div class=" ovh rel pl10 pr10 mt10">
+      <h1 class="title2">供应商加盟申请</h1>
+      <p> 如果您希望自己的产品在我们千千万万的微店铺上架，请联系我们~<br>
+前提是品质靠谱，货源充足，那么不管是高端大气上档次，还是低调奢华有内涵的产品，我们都欢迎哦~
+</p>
+    </div>
+      <div class="fix"><a href="/shop-homepage" class="back fl mt10 ml10 abtn pt5 pb5">返回</a></div>
+    <!--以下是页面内容-->
+    <div class="p10">
+      <h1 class="title2">填写公司信息:</h1>
+      <div class="cBox">
+        <div class="mb10"><span class="tx">公司名称：</span>
+          <input type="text" placeholder="请输入您公司名称"  class="txtLong">
+        </div>
+        <div class="mb10"><span class="tx">产品类目：</span>
+          <input type="text" placeholder="请输入您主要经营产品类目"  class="txtLong">
+          <p class="error">此项为必填项！</p></div>
+        <div class="mb10"><span class="tx">网站链接：</span>
+          <input type="text" placeholder="请输入您公司网址" class="txtLong">
+        </div>
+        <div class=""><span class="tx">加盟描述：</span>
+          <textarea rows="5" class="txtLong" placeholder="请您说明加盟的理由和优势"></textarea>
+        </div>
+      </div>
+      <h1 class="title2">联系方式:</h1>
+      <div class="cBox">
+        <div class="mb10"><span class="tx">联系人：</span>
+          <input type="text" placeholder="请输入您的真实姓名"  class="txtShort">
+        </div>
+        <div class="mb10"><span class="tx">手机：</span>
+          <input type="text" placeholder="请输入您的手机号"  class="txtShort">
+          <!--<p class="error">验证码输入失败！</p>--></div>
+        <div class=""><span class="tx">邮箱：</span>
+          <input type="text" placeholder="请输入您的电子邮箱" class="txtLong">
+        </div>
+      </div>
+      <div class="">
+        <input type="button" value="提交申请" class="btn mt10 db pct100" onclick="javascript:location.href='/shop-join2';">
+      </div>
+    </div>
+    <!--以下是页脚内容-->
+    {{> footer}}
+  </section>
+</article>
+</body>

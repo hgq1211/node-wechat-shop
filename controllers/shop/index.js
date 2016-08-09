@@ -1,7 +1,7 @@
 // GET /user
 	exports.get = {
-		url: '/games2',
+		url: '/shop',
 		handler: function (req, res, next) {
-			res.render('games/games2',{title:"商城"})
+			res.render('shop/shop',{title:"商城"})
 		}
 	};

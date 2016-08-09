@@ -1,21 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
+var config = require('../config');
+
 var path = require('path');
 var fs = require('fs');
 var join = path.join;
+var http = require('http');
+var querystring = require('querystring');
+var debug = require('debug')('nodeJSDemo:http');
 
 
-router.get('/', function(req, res){
-    res.render('index');
+router.get('/',function(req,res){
+    res.render('index', {
+        title: '找回密码和'
+    });
 });
-router.get('/Vshop', function(req, res){
-    res.render('./Vshop');
-});
-router.get('/Vshop-homepage', function(req, res){
-    res.render('./Vshop-homepage');
-});
-router.get('/explain', function(req, res){
-    res.render('./explain');
-});
+
 module.exports = router;
