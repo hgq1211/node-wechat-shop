@@ -1,7 +1,6 @@
 
 var express = require('express');
 var router = express.Router();
-var connect = require('connect');
 //var cookieParser = require('cookie-parser');
 var wechat = require('wechat');
 var API = require('wechat-api');
