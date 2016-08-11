@@ -1,0 +1,80 @@
+var menu = {
+	"button":[
+		{   "name":"会员",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"注册会员",
+					"url":"http://hgq1211.duapp.com/register"
+				},
+				{
+					"type":"view",
+					"name":"会员活动",
+					"url":"http://hgq1211.duapp.com/games"
+				},
+				{
+					"type":"view",
+					"name":"在线充值",
+					"url":"http://hgq1211.duapp.com/"
+				},
+				{
+					"type":"view",
+					"name":"我的会员卡",
+					"url":"http://hgq1211.duapp.com"
+				},
+				{
+					"type":"view",
+					"name":"我的优惠券",
+					"url":"http://hgq1211.duapp.com"
+				}
+			]
+		},
+		{
+			"name":"点餐",
+			"sub_button":[
+				{
+					"type": "scancode_push",
+					"name": "堂食扫码",
+					"key": "rselfmenu_0_1",
+					"sub_button": [ ]
+				},
+				{
+					"type":"view",
+					"name":"外卖自提",
+					"url":"http://hgq1211.duapp.com/"
+				},
+				{
+					"type":"view",
+					"name":"我的订单",
+					"url":"http://hgq1211.duapp.com/"
+				},
+				{
+					"type":"view",
+					"name":"我的账户",
+					"url":"http://hgq1211.duapp.com/"
+				}
+			]
+		},
+		{
+			"name":"互动平台",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"官方网站",
+					"url":"http://hgq1211.duapp.com/"
+				},
+				{
+					"type":"view",
+					"name":"吃货评价",
+					"url":"http://hgq1211.duapp.com/"
+				},
+				{
+					"type":"view",
+					"name":"畅聊社区",
+					"url":"http://hgq1211.duapp.com/"
+				}
+			]
+		}
+	]
+};
+module.exports = menu;

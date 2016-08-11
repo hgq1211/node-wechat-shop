@@ -5,93 +5,14 @@ var router = express.Router();
 var wechat = require('wechat');
 var API = require('wechat-api');
 var config = require('../config.js');
-var routes = require('../routes/index');
+var menu=require('../config/menu.js');
 
 //调用wechat-api，创建api对象
 var api = new API(config.appid, config.appsecret);
-api.getAccessToken(function (err, token) {  
-
+api.getAccessToken(function (err, token) {
+    //vP8ld41TV072cGHuetdqPMhq_h_k7J0juySNwlpbhC0dOt_qjvUZy-8YJcZB0nDSdm0-Tn4MI3CKORItt4X20lk1lLl1IfuA_q6YnstlferT_zFw_gcJjMS7hs8GmeYVYYGgABATTB
      console.log(token);
 });
-var menu = {
-    "button":[
-        {   "name":"会员",
-            "sub_button":[
-                {
-                    "type":"view",
-                    "name":"注册会员",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"会员活动",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"在线充值",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"我的会员卡",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"我的优惠券",
-                    "url":"http://www.leisong0801.cn/"
-                }
-            ]
-        },
-
-        {
-            "name":"点餐",
-            "sub_button":[
-                {
-                    "type":"view",
-                    "name":"堂食扫码",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"外卖自提",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"我的订单",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"我的账户",
-                    "url":"http://www.leisong0801.cn/"
-                }
-            ]
-        },
-        {
-            "name":"互动平台",
-            "sub_button":[
-                {
-                    "type":"view",
-                    "name":"官方网站",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"吃货评价",
-                    "url":"http://www.leisong0801.cn/"
-                },
-                {
-                    "type":"view",
-                    "name":"畅聊社区",
-                    "url":"http://www.leisong0801.cn/"
-                }
-            ]
-        }
-    ]
-}
 
 //调用创建自定义菜单函数
 api.createMenu(menu, function (err, result) {
@@ -104,12 +25,13 @@ router.use('/',wechat(config,wechat.event(function(message,req,res,next){
   var openid=message.FromUserName;
   //req.sessionStore=openid;
   // req.sessioID=openid;
-
+console.log(message);
    api.getUser({openid, lang: 'zh_CN'}, function(err,result){
 
     //关注时的信息推送
     if(message.Event=='subscribe') {
-            res.reply("您好:"+result.nickname+"\n欢迎关注:nodejs-wechat store\n您可以回复:r任意包含订餐二字的内容");
+        var nickname=result.nickname||"无";
+            res.reply("您好:"+nickname+"\n欢迎关注:nodejs-wechat store\n您可以回复:任意包含订餐二字的内容");
         }
     })
  })));
@@ -118,7 +40,7 @@ router.use('/',wechat(config,wechat.event(function(message,req,res,next){
 router.use('/', wechat(config).text(function (message, req, res, next) {
 
     if ((/['订餐']/).test(message.Content)) {
-        var str='要订餐 <a href="http://8ddb6a5e.ngrok.io/">你就这么玩</a>';
+        var str='要订餐 <a href="http://hgq1211.duapp.com/">你就这么玩</a>';
         res.reply(str);
     } else {
       req.wxsession.text = req.wxsession.text || [];
@@ -128,14 +50,14 @@ router.use('/', wechat(config).text(function (message, req, res, next) {
 
 }).image(function (message, req, res, next) {
 
-  //res.reply(result.headimgurl);
+    res.reply('亲，你说的是' + message+'么？');
 
 }).voice(function (message, req, res, next) {
   // TODO
 }).video(function (message, req, res, next) {
   // TODO
 }).location(function (message, req, res, next) {
-  // TODO
+    res.reply('亲，你是在' + message+'么？');
 }).link(function (message, req, res, next) {
   // TODO
 }).device_text(function (message, req, res, next) {
