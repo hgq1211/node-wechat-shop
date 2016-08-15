@@ -1,11 +1,4 @@
-<body>
-<article id="main">
-  {{> nav}}
-  <section class="content">
-    <header>
-      <div class="h38 rel pl10 pr10 bline"><a href="#" id="menu"></a> <div class="Logo"><p class="f16">我的云微店</p><p class="f12">Beta Version 1.0.1</p></div><a href="Vshop-ranking.html" id="lv">LV10</a><!--<a href="#" id="cai">全部商品</a>--></div>
-      <nav id="nav"><a href="/"><span>V-shop Name 1</span></a><a href="blue.html"><span>V-shop Name 2</span></a><a href="blue.html"><span>V-shop Name 3</span></a><a href="blue.html"><span>V-shop Name 4</span></a></nav>
-    </header>
+{{> user-header}}
     <!--以下是页面内容-->
     <div class="eBox tc">
 <span class="f13" style="color:#F1B7B7">您当前已获得特别推广佣金</span><br><span class="f40 cyl fa b">4,322</span><span class="cyl"> 枚</span><br><span class="f13 cyl">天狮金币</span></div>
@@ -30,16 +23,13 @@
       <p class="tr mb5 cr"><a href="javascript:void(0)" class="abtnQ" id="abtnQ"></a>
 			<script type="text/javascript">
 			$(document).ready(function() {
-				
-				
+
 			$("#abtnQ").toggle(function(){
 					$(this).removeClass().attr("class","abtnX");
 					},function(){
 						$(this).removeClass().attr("class","abtnQ");
 						})
-						
-						
-						
+
 			});
       </script></p>
       <h2 class="mb10 f16"><span class="yfb nb">已发布产品：<b class="cr">5</b>/12</span>圣诞新春产品促销套装，圣诞新春产品促销套装</h2>
@@ -49,16 +39,13 @@
       <p class="tr mb5 cr"><a href="javascript:void(0)" class="abtnQ" id="abtnQ"></a>
 			<script type="text/javascript">
 			$(document).ready(function() {
-				
-				
+
 			$("#abtnQ").toggle(function(){
 					$(this).removeClass().attr("class","abtnX");
 					},function(){
 						$(this).removeClass().attr("class","abtnQ");
 						})
-						
-						
-						
+
 			});
       </script></p>
       <h2 class="mb10 f16"><span class="yfb nb">已发布产品：<b class="cr">5</b>/12</span>圣诞新春产品促销套装，圣诞新春产品促销套装</h2>
@@ -75,6 +62,3 @@
     </div>
     <!--以下是页脚内容-->
    {{> footer}}
-  </section>
-</article>
-</body>
