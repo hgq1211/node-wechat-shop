@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session  = require('express-session');
-var routes = require('./routes/index');
 var flash = require('connect-flash');
 var ejs = require('ejs');
 /*图片验证码*/
@@ -79,7 +78,7 @@ console.log("something happening");
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('404', {
       message: err.message,
       error: err
     });
@@ -90,11 +89,10 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('404', {
     message: err.message,
     error: {}
   });
 });
-
 
 module.exports = app;
