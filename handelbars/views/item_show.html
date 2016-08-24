@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include head.html%>
+    <body onload="checkCookie()">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container" style="margin-right: 50px">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="../">首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                        <li class="dropdown active">
+                            <a href="">特色展示</a>
+                        </li>
+                        <!--menu Portfolio li end here-->
+                        <li class="dropdown">
+                            <a href="user_blog">博客</a>
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown">
+                            <a href="shop_home">商城</a>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="dropdown yamm-fw">
+                            <a href="/about">关于我们</a>
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->    
+
+                        <li class="dropdown " data-animate="animated fadeInUp" style="z-index:500;">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                            <ul class="dropdown-menu search-dropdown animated fadeInUp">
+                                <li id="dropdownForm">
+                                    <div class="dropdown-form">
+                                        <form class=" form-inline">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="search...">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-theme-bg" type="button">enter</button>
+                                                </span>
+                                            </div><!--input group-->
+                                        </form><!--form-->
+                                    </div><!--.dropdown form-->
+                                </li><!--.drop form search-->
+                            </ul><!--.drop menu-->
+                        </li> <!--menu search li end here-->
+
+                        <li class="dropdown " id="user_name">
+                        </li>
+                        <li class="dropdown" id="login" style="display: none">
+                            <a href="#" class=" dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
+                                <form role="form">
+                                    <h4>Signin</h4>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="Username" name="nickName">
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" placeholder="Password" name="passWord">
+                                        </div>
+                                        <div class="checkbox pull-left">
+                                            <label>
+                                                <input type="checkbox" id="remember" value="checked" checked> Remember me
+                                            </label>
+                                        </div>
+                                        <a class="btn btn-theme-bg pull-right" onclick="Login()">Login</a>
+                                        <!--                                        <button type="submit" class="btn btn-theme pull-right">Login</button>                 -->
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        <p>Don't have an account! <a href="/user_register">Register Now</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </li> <!--menu login li end here-->
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Our Feature</h4>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="/">首页</a></li>
+                            <li>特色展示</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumbs-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="portfolio-cube">
+
+                <div id="filters-container" class="cbp-l-filters-button">
+                    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+                        All <div class="cbp-filter-counter"></div>
+                    </div>
+                    <div data-filter=".identity" class="cbp-filter-item">
+                        Identity <div class="cbp-filter-counter"></div>
+                    </div>
+                    <div data-filter=".web-design" class="cbp-filter-item">
+                        Web Design <div class="cbp-filter-counter"></div>
+                    </div>
+                    <div data-filter=".graphic" class="cbp-filter-item">
+                        Graphic <div class="cbp-filter-counter"></div>
+                    </div>
+                    <div data-filter=".logos" class="cbp-filter-item">
+                        Logo <div class="cbp-filter-counter"></div>
+                    </div>
+                </div>
+
+                <div id="grid-container" class="cbp">
+                    <div class="cbp-item graphic">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-1.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-1.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Dashboard<br>by Paul Flavius Nechita">view larger</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Dashboard</div>
+                        <div class="cbp-l-grid-projects-desc">Web Design / Graphic</div>
+                    </div>
+                    <div class="cbp-item web-design logos">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-2.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-2.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="World Clock Widget<br>by Paul Flavius Nechita">view larger</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">World Clock Widget</div>
+                        <div class="cbp-l-grid-projects-desc">Logo / Web Design</div>
+                    </div>
+                    <div class="cbp-item graphic logos">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-3.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-3.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="To-Do Dashboard<br>by Tiberiu Neamu">view video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">To-Do Dashboard</div>
+                        <div class="cbp-l-grid-projects-desc">Graphic / Logo</div>
+                    </div>
+                    <div class="cbp-item web-design graphic">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-1.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/4900333&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Events and  More<br>by Tiberiu Neamu">view sound</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Events and More</div>
+                        <div class="cbp-l-grid-projects-desc">Web Design / Graphic</div>
+                    </div>
+                    <div class="cbp-item identity web-design">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-5.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-5.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="WhereTO App<br>by Tiberiu Neamu">view larger</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">WhereTO App</div>
+                        <div class="cbp-l-grid-projects-desc">Web Design / Identity</div>
+                    </div>
+                    <div class="cbp-item identity web-design">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-6.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-6.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Ski * Buddy<br>by Tiberiu Neamu">view larger</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Ski * Buddy</div>
+                        <div class="cbp-l-grid-projects-desc">Identity / Web Design</div>
+                    </div>
+                    <div class="cbp-item graphic logos">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-7.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-7.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">view sound</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Seemple* Music for iPad</div>
+                        <div class="cbp-l-grid-projects-desc">Graphic / Logo</div>
+                    </div>
+                    <div class="cbp-item identity graphic">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-8.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="http://www.youtube.com/watch?v=Bu9OiDmxCrQ" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Remind~Me More<br>by Tiberiu Neamu">view video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Remind~Me More</div>
+                        <div class="cbp-l-grid-projects-desc">Identity / Graphic</div>
+                    </div>
+                    <div class="cbp-item web-design graphic">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-9.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-9.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Workout Buddy<br>by Tiberiu Neamu">view video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Workout Buddy</div>
+                        <div class="cbp-l-grid-projects-desc">Web Design / Graphic</div>
+                    </div>
+                    <div class="cbp-item identity web-design">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-1.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="https://www.youtube.com/watch?v=3wbvpOIIBQA" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Bills Bills Bills<br>by Cosmin Capitanu">view video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Bills Bills Bills</div>
+                        <div class="cbp-l-grid-projects-desc">Identity / Web Design</div>
+                    </div>
+                    <div class="cbp-item identity logos">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-2.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="img/img-2.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Generic Apps<br>by Cosmin Capitanu">view video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Generic Apps</div>
+                        <div class="cbp-l-grid-projects-desc">Identity / Logo</div>
+                    </div>
+                    <div class="cbp-item graphic web-design">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/img-3.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax_project1" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
+                                        <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/26519543&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Speed Detector<br>by Cosmin Capitanu">view sound</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title">Speed Detector</div>
+                        <div class="cbp-l-grid-projects-desc">Graphic / Web Design</div>
+                    </div>
+                </div>
+
+                <div id="loadMore-container" class="cbp-l-loadMore-button">
+                    <a href="/ajax_loadMore" class="cbp-l-loadMore-link">
+                        <span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
+                        <span class="cbp-l-loadMore-loadingText">LOADING...</span>
+                        <span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="divide60"></div>
+        <%- include user_footer.html %>
+        <script>
+            $(function(){
+
+                var user='<%=user%>'||"undefined";
+                var qquser = '<%=qquser%>' || "undefined";
+                if(user=='undefined'||user=='null') {
+                    if (qquser == 'undefined' || qquser == 'null') {
+                        $("#login").show();
+                    }
+                    else {
+                        $("#user_name").load("/user_qqname");
+                    }
+
+                }
+                else{
+
+                    $("#user_name").load("/user_getNickName");
+                }
+
+            });
+        </script>
+    </body>
+</html>

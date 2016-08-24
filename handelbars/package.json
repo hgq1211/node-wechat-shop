@@ -1,0 +1,30 @@
+{
+  "name": "onlinestore",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "~1.13.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "*",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "mysql": "^2.10.2",
+    "qiniu": "^6.1.11",
+    "serve-favicon": "~2.3.0"
+  },
+  "description": "1.完成前端界面的修改，在不涉及数据库的前提下达到运行要求。",
+  "main": "app.js",
+  "keywords": [
+    "store"
+  ],
+  "author": "hugq",
+  "license": "ISC"
+}

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include head.html%>
+   <style>
+       .modal-body img{
+           height:20%;
+           width:20%;
+       }
+   </style>
+    <body>
+        <!--navigation -->
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="/">首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                        <li class="dropdown">
+                            <a href="/user_blog">博客</a>
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">商城 <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">                              
+                                <li><a href="/shop_detail">商品详情</a></li>
+                                <li><a href="/shop_cart">购物车</a></li>
+                                <li><a href="shop_checkout">结算中心</a></li>
+                            </ul>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="yamm-fw">
+                            <a href="/maintenance-page">关于我们</a>
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->
+
+                        <li class="dropdown shopCart">
+                            <a href="#" class=" dropdown-toggle count" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>(<%=count%>)</a>
+                            <div class="dropdown-menu dropdown-menu-right cart-box shop-cart animated fadeInUp  pre-scrollable">
+                                <ol class="list-unstyled">
+                                    <%
+                                    if(cart_item)
+                                    cart_item.forEach(function(cart_item){%>
+
+                                    <li  class="clearfix">
+                                        <img src="shop-img/p-8.jpg" class="img-responsive" alt="">
+                                        <div class="cart-desc">
+                                            <h5>Puma originals
+                                                <span class="close"><i class="fa fa-trash-o"></i></span>
+                                            </h5>
+                                            <span class="cart-item-price">
+                                                <del>199</del> 99
+                                            </span>                                          
+                                        </div>
+                                    </li>
+                                    <%})%>
+
+                                    <li class="clearfix">
+                                        <span class="cart-total pull-left">
+                                            TOTAL : 198
+                                        </span>
+                                        <span class=" pull-right">
+                                            <a href="/shop_cart" class="btn btn-theme-bg btn-xs">查看购物车</a>
+                                        </span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li> <!--menu cart li end here-->
+                        <li class="dropdown " id="user_name"></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+
+        <div class="breadcrumb-wrap breadcrumb-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Shop</h4>
+                        <p>Find the best products in our store</p>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="/">首页</a></li>
+                            <li>商城</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb light-->
+        <div class="divide40"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 margin20">
+                    <div class="row margin20">
+                        <div class="col-md-4">
+                            <form method="post" action="#">
+                                <select class="form-control">
+                                    <option>Sorting by Price</option>
+                                    <option>Sort by price: low to high</option>
+                                    <option>Sort by price: high to low</option>
+                                </select>
+                            </form><!--shorting form end-->
+                        </div> 
+                    </div><!--row top end-->
+                    <div class="row">
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-1.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">lady topa</a></h4>
+                                    <input name="item_id" value="1" style="display: none">
+                                    <span>$80</span>
+                                    <a class="btn btn-default" data-toggle="tooltip"
+                                       data-placement="top" title="添加到购物车" onclick="addItem()"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <span class="sale-label">Sale</span>
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-2.jpg" alt="" class="img-responsive pho">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">Gold bangles</a></h4>
+                                    <span><del>$90</del> $50</span>
+                                    <a class="btn btn-default" title="添加到购物车" onclick="addcart()"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-3.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">lady black Shirt</a></h4>
+                                    <span> $25</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-4.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">mackup pack</a></h4>
+                                    <span> $499</span>
+
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-5.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail"> Half Tshirt</a></h4>
+                                    <span>$125</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <span class="sale-label">Sale</span>
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-6.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">i-phone 6</a></h4>
+                                    <span><del>$499</del> $399</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-7.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">Mens Wears</a></h4>
+                                    <span>$928</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <span class="sale-label">Sale</span>
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-8.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">Formal Shoes</a></h4>
+                                    <span><del>$199</del> $149</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                        <div class="col-md-4 margin40">
+                            <div class="product-col">
+                                <span class="sale-label">Sale</span>
+                                <a href="/shop_detail">
+                                    <img src ="shop-img/p-9.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="product-desc-sh">
+                                    <h4><a href="/shop_detail">Canon Flash</a></h4>
+                                    <span><del>$199</del> $149</span>
+                                    <a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                </div>                     
+                            </div><!--products show col end-->
+                        </div><!--col sm 6-->
+                    </div><!--products row-->
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                            </a>
+                        </li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--products list columns end-->
+                <div class="col-md-3 col-md-offset-1 shop-sidebar">
+                    <div class="sidebar-box margin40">
+                        <h4>Search</h4>
+                        <form role="form" class="search-widget">
+                            <input type="text" class="form-control">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div><!--sidebar-box-->
+
+                    <div class="sidebar-box margin40">
+                        <h4>Shop by brands</h4>
+                        <ul class="list-unstyled cat-list">
+                            <li> <a href="#">Us polo</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Levis</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Wrangler</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Reebok</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Adidas</a> <i class="fa fa-angle-right"></i></li>                     
+                        </ul>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Best sellers</h4>
+                        <ul class="list-unstyled popular-post">
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="shop-img/p-1.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">lady topa</a></h5>
+                                    <h6><del>$230</del> $150</h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="shop-img/p-2.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">Gold bangles</a></h5>
+                                    <h6> $250</h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="shop-img/p-3.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">White blazer </a></h5>
+                                    <h6>$99</h6>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Tag Cloud</h4>
+                        <div class="tag-list">
+                            <a href="#">Mens</a>
+                            <a href="#">Womens</a>
+                            <a href="#">jeans</a>
+                            <a href="#">T-shirts</a>
+                            <a href="#">Kids</a>
+                            <a href="#">Offers</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Shirts</a>
+
+                        </div>
+                    </div>
+                </div><!--sidebar-->
+            </div>
+        </div><!--shop columns container end-->
+
+        <div class="divide20"></div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 100px">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #d58512">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel" style="text-align: center">
+                            --商品添加成功--
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped shopping-cart-table">
+                            <tbody><tr>
+                                <th class="hidden-xs">
+
+                                </th>
+                                <th>
+                                    Product
+                                </th>
+                                <th>
+                                    Q-ty
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <td class="hidden-xs">
+                                    <a href=""><img src="shop-img/p-1.jpg" alt="" style="width:70px;height:70px;"></a>
+                                </td>
+                                <td>
+                                    <a href="#" title="">Ladies topa</a>
+                                </td>
+                                <td>
+                                    <form class="form">
+                                        <input type="number" class="input-sm" style="width: 60px;" min="1" max="25" value="1">
+                                    </form>
+                                </td>
+                                <td>
+                                    ......
+                                </td>
+
+                            </tr>
+
+                            </tbody></table><!--cart table end-->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default text-left" data-dismiss="modal">继续浏览</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location='shop_cart'">
+                            查看购物车
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <%- include shop_footer.html%>
+
+<script>
+    $(function(){
+        var user = '<%=user%>' || "undefined";
+        var qquser = '<%=qquser%>' || "undefined";
+        if (user == 'undefined' || user == 'null') {
+
+        }
+        else {
+            $("#user_name").load("/user_getNickName");
+        }
+
+        if (qquser == 'undefined' || qquser == 'null') {
+
+        }
+        else {
+            $("#user_name").load("/user_qqname");
+        }
+    });
+    //商品加购物车
+    function addItem(){
+        var item_id=$("input[name=item_id]").val();
+        if('<%=user%>'=='undefined'||'<%=user%>'=='null'){
+            window.location="user_login?shop_home"
+        }
+        $.ajax({
+            type:"post",
+            url:"/add/item",
+            data:{item_id:item_id,num:1},
+            success:function(){
+                $('#myModal').modal({
+                    show:true
+                });
+            }
+        })
+    }
+    function addcart(){
+//        alert(1);
+        var addImage=$('img').eq(2);
+        var shopCart=$(".shopCart");
+        console.log(addImage);
+        var cloneImage=addImage.clone();
+        cloneImage.css({
+            'width':'200px',
+            'height':'200px',
+            'position':'absolute',
+            'top':addImage.offset().top,
+            'left':addImage.offset().left,
+            'z-index':'1000',
+            'opacity':'5'
+        });
+        cloneImage.appendTo($('body')).animate({
+            'width': 50,
+            'height': 50,
+            'top': shopCart.offset().top,
+            'left': shopCart.offset().left
+        },2000,function(){
+            cloneImage.animate({
+                'width':0,
+                'height':0
+            });
+        });
+//        var count='<%=count%>++';
+//        $(".count").text("('count')");
+    }
+</script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#v0.11
+
+CACHE:
+bin/www.js
+app.js
+views/head.html
+views/user_login.html
+
+NETWORK:
+lib/ionic/fonts/ionicons.ttf?v=1.5.2
+lib/ionic/fonts/ionicons.woff?v=1.5.2
+css/style.css
