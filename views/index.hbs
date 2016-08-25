@@ -92,6 +92,7 @@
     </div>
     </div>
       <div id="hbs"></div>
+    <button onclick="test()"> dianwo</button>
       {{name}}
       {{#each student}}
           {{#if name}}
@@ -134,4 +135,17 @@
   });
 var bullets = document.getElementById('position').getElementsByTagName('li');
 </script>
-
+<script>
+    function test(){
+        var name="xiaohu";
+        $.ajax({
+            type:"post",
+            url:"/admin/xiaohu",
+            datatype: "json",
+            data:{name:"xiaohu"},
+            success:function (data){
+                alert("nihao");
+            }
+        })
+    }
+</script>

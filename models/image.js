@@ -1,4 +1,4 @@
-var  client = require('../database');
+var  client = require('database');
 var  uid = require('../utils/uuid');//
 function  Image(image) {
     this.image_url = image.image_url;
