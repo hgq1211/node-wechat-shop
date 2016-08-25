@@ -2,7 +2,7 @@
 (function() {
     var client, mysql, settings;
 //数据库的设置setting
-    settings = require('./settings.js');
+    settings = require('./config/settings.js');
     client = null;
     mysql = require('mysql');
     exports.getDbCon = function() {
