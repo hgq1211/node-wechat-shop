@@ -1,0 +1,19 @@
+#editor-trigger {
+    height: 300px;
+    max-height: 500px;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.padded-section {
+    padding: 80px 10px; }
+a{
+    font-size: 18px;
+    color:green;
+}
+#pagination{
+    text-align: center;
+}
+

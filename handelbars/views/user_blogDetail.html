@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include head.html%>
+    <body>
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="/" >首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                        <li class="dropdown">
+                            <a href="item_show">特色展示</a>
+                        </li>
+                        <!--menu Portfolio li end here-->
+                        <li class="dropdown active">
+                            <a href="/user_blog" >博客</a>
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown">
+                            <a href="/shop_home">商城</a>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="dropdown">
+                            <a href="about">关于我们</a>
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->
+
+                        <li class="dropdown" style="display: none" id="space">&emsp;&emsp;</li>
+                        <li class="dropdown " id="user_name">
+                        </li>
+                        <li class="dropdown" id="login" style="display: none">
+                            <a href="#" class=" dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
+                                <form role="form">
+                                    <h4>Signin</h4>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="Username" name="nickName">
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" placeholder="Password" name="passWord">
+                                        </div>
+                                        <div class="checkbox pull-left">
+                                            <label>
+                                                <input type="checkbox" id="remember" value="checked" checked> Remember me
+                                            </label>
+                                        </div>
+                                        <a class="btn btn-theme-bg pull-right" onclick="Login()">Login</a>
+                                        <!--                                        <button type="submit" class="btn btn-theme pull-right">Login</button>                 -->
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        <p>Don't have an account! <a href="/user_register">Register Now</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </li> <!--menu login li end here-->
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Blog Detail</h4>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="/user_blog">博客</a></li>
+                            <li><strong>博客详情</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumbs-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-post">
+                            <div>
+                                <img src="img/showcase-2.jpg" class="img-responsive" alt="workimg">
+
+                            </div>
+                        <ul class="list-inline post-detail">
+                            <li>by <a href="#">assan</a></li>
+                            <li><i class="fa fa-calendar"></i> 31st july 2014</li>
+                            <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
+                        </ul>
+                        <h2>Lorem ipsum dollor sit amet</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                        </p>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+
+                        </p>
+                        <p class="dropcap">
+                            Sed iaculis condimentum nibh posuere gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="colored-text"> Donec mollis tempor erat</span> ut rhoncus. Nullam tincidunt pretium lectus. Ut at lacinia nisl. Fusce eu risus non quam vehicula volutpat in eget elit. Vestibulum id nunc tellus. Integer sollicitudin nibh est, a volutpat mi interdum et. Ut felis justo, rutrum a ligula ut, lobortis facilisis metus. Etiam vel enim ante. Integer tempor, odio id cursus iaculis, est magna porta metus, vitae mollis est lacus id nibh. Integer pharetra purus eros, hendrerit semper orci elementum sit amet. Etiam suscipit turpis nunc. Vivamus a eleifend lorem. Donec vehicula sem non aliquam consequa
+                        </p>
+                    </div><!--blog post-->
+                    <div class="about-author">
+                        <h4 class="colored-text">About the Author</h4>
+                        <img src="img/team-3.jpg" class="img-responsive" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, <span class="colored-text">adipiscing condimentum tristique</span> vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                        </p>
+                    </div><!--about author-->
+
+                    <ul class="pager">
+                        <li class="previous"><a href="#">&larr; Previous Page</a></li>
+                        <li class="next"><a href="#">Next Page &rarr;</a></li>
+                    </ul><!--pager-->
+                    <div class="divide60"></div>
+                    <div class="comment-form">
+                        <div class="ds-thread" data-thread-key="034f772b-c974-4199-88f9-72b2d62579ae" data-title="1" data-url="http://127.0.0.1:3000/user_blogDetail?blog_id=316d0f7b-9d02-4dc9-9a8a-a11a8ee9e45a"></div>
+                    </div>
+                </div><!--col-->
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="sidebar-box margin40">
+                        <h4>Search</h4>
+                        <form role="form" class="search-widget">
+                            <input type="text" class="form-control">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Text widget</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.
+                        </p>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Categories</h4>
+                        <ul class="list-unstyled cat-list">
+                            <li> <a href="#">Marketing</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Videos</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Sports</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Fashion</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Media</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Seo</a> <i class="fa fa-angle-right"></i></li>
+                            <li> <a href="#">Marketing</a> <i class="fa fa-angle-right"></i></li>
+                        </ul>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Popular Post</h4>
+                       <ul class="list-unstyled popular-post">
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="img/img-7.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">blog post image</a></h5>
+                                    <h6>31st july 2016</h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="img/img-8.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">blog post image</a></h5>
+                                    <h6>31st july 2014</h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="popular-img">
+                                    <a href="#"> <img src="img/img-9.jpg" class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="popular-desc">
+                                    <h5> <a href="#">blog post image</a></h5>
+                                    <h6>31st july 2014</h6>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Tag Cloud</h4>
+                        <div class="tag-list">
+                            <a href="#">Wordpress</a>
+                            <a href="#">Design</a>
+                            <a href="#">Graphics</a>
+                            <a href="#">Seo</a>
+                            <a href="#">Development</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">fashion</a>
+                            <a href="#">Media</a>
+                            <a href="#">Photoshop</a>
+                        </div>
+                    </div>
+                </div><!--sidebar-col-->
+            </div><!--row for blog post-->
+        </div><!--blog full main container-->
+        <!-- 多说评论框 start -->
+
+        <!-- 多说评论框 end -->
+        <div class="divide60"></div>
+        <%- include user_footer.html%>
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"hgqceshi"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+      </body>
+</html>

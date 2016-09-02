@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+        <%- include head.html%>
+        <!--sky form pro css-->
+        <link href="sky-form/css/sky-forms.css" rel="stylesheet">
+    <body>
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown active">
+                            <a href="/">首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                        <li class="dropdown">
+                            <a href="/user_blog">博客</a>
+
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown ">
+                            <a href="shop_home">商城</a>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="dropdown">
+                            <a href="/item_show">特色展示</a>
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->    
+
+                        <li class="dropdown " data-animate="animated fadeInUp" style="z-index:500;">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                            <ul class="dropdown-menu search-dropdown animated fadeInUp">
+                                <li id="dropdownForm">
+                                    <div class="dropdown-form">
+                                        <form class=" form-inline">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="search...">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-theme-bg" type="button">enter</button>
+                                                </span>
+                                            </div><!--input group-->
+                                        </form><!--form-->
+                                    </div><!--.dropdown form-->
+                                </li><!--.drop form search-->
+                            </ul><!--.drop menu-->
+                        </li> <!--menu search li end here-->
+                        <li class="dropdown">
+                            <a href="#" class=" dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> (2)</a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-login-box shop-cart animated fadeInUp">
+                                <ol class="list-unstyled">
+                                    <li  class="clearfix">
+                                        <img src="shop-img/p-8.jpg" class="img-responsive" alt="">
+                                        <div class="cart-desc">
+                                            <h5>Puma originals
+                                                <span class="close"><i class="fa fa-trash-o"></i></span>
+                                            </h5>
+                                            <span class="cart-item-price">
+                                                <del>$199</del> $99
+                                            </span>                                          
+                                        </div>
+                                    </li>
+                                    <li  class="clearfix">
+                                        <img src="shop-img/p-4.jpg" class="img-responsive" alt="">
+                                        <div class="cart-desc">
+                                            <h5>Puma originals
+                                                <span class="close"><i class="fa fa-trash-o"></i></span>
+                                            </h5>
+                                            <span class="cart-item-price">
+                                                <del>$199</del> $99
+                                            </span>                                          
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="cart-total pull-left">
+                                            TOTAL : $198
+                                        </span>
+                                        <span class=" pull-right">
+                                            <a href="/" class="btn btn-theme-bg btn-xs">查看购物车</a>
+                                        </span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li> <!--menu cart li end here-->
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+
+        <div class="breadcrumb-wrap breadcrumb-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Create account</h4>
+                        <p>Create new account with assan</p>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="/">首页</a></li>
+                            <li>用户注册</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb light-->
+        <div class="divide60"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 margin30">
+                    <h3 class="heading">Welcome to assan</h3>
+                    <p>
+                        Suspendisse et tincidunt ipsum, et dignissim urna. Vestibulum nisl tortor, gravida at magna et, suscipit vehicula massa.
+                    </p>
+
+                    <div class="divide50"></div>
+                    <h3 class="heading">Follow us</h3>
+                    <ul class="list-inline social-1 reg-social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 sky-form-login-register v2">
+                    <div class="margin40">
+
+                        <form action="" id="sky-form" class="sky-form" method="post">
+                            <h3 class="text-center">Create new account with assan</h3>
+
+                            <fieldset>					
+                                <section>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="text" name="nickname" placeholder="Username">
+                                        <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+                                    </label>
+                                </section>
+
+                                <section>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-envelope-o"></i>
+                                        <input type="email" name="email" placeholder="Email address">
+                                        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+                                    </label>
+                                </section>
+
+                                <section>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="password" placeholder="Password" id="password">
+                                        <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+                                    </label>
+                                </section>
+
+                                <section>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="passwordConfirm" placeholder="Confirm password">
+                                        <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+                                    </label>
+                                </section>
+                            </fieldset>
+
+                            <fieldset>
+                                    <section >
+                                        <label class="input">
+                                            <input type="text" name="username" placeholder="name">
+                                        </label>
+                                    </section>
+                                <section>
+                                    <label class="select">
+                                        <select name="gender">
+                                            <option value="2" selected disabled>Gender</option>
+                                            <option value="0">Male</option>
+                                            <option value="1">Female</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+
+                                <!--<section>-->
+                                    <!--<label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>-->
+                                    <!--<label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>-->
+                                <!--</section>-->
+                            </fieldset>
+                            <footer>
+                                <button type="submit" class="button">Create account</button>
+                            </footer>
+                        </form>			
+                    </div><!--login form wrap end-->
+
+                </div>
+            </div>
+        </div>
+        <div class="social-login-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="row social-login">
+                            <div class="col-sm-12">
+                                <div class="border-rits">
+                                    <span>or</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-lg btn-facebook"><i class="fa fa-facebook"></i> Signup with facebook</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-lg btn-twitter"><i class="fa fa-twitter"></i> Signup with Twitter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--social login wrapper-->
+        <%- include shop_footer.html%>
+        <!--sky form plugin js-->
+        <script src="sky-form/js/jquery.form.min.js" type="text/javascript"></script>
+        <script src="sky-form/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function()
+            {
+                // Validation		
+                $("#sky-form").validate(
+                        {
+                            // Rules for form validation
+                            rules:
+                                    {
+                                        username:
+                                                {
+                                                    required: true
+                                                },
+                                        email:
+                                                {
+                                                    required: true,
+                                                    email: true
+                                                },
+                                        password:
+                                                {
+                                                    required: true,
+                                                    minlength: 6,
+                                                    maxlength: 20
+                                                },
+                                        passwordConfirm:
+                                                {
+                                                    required: true,
+                                                    minlength: 6,
+                                                    maxlength: 20,
+                                                    equalTo: '#password'
+                                                },
+                                        firstname:
+                                                {
+                                                    required: true
+                                                },
+                                        lastname:
+                                                {
+                                                    required: true
+                                                },
+                                        gender:
+                                                {
+                                                    required: true
+                                                },
+                                        terms:
+                                                {
+                                                    required: true
+                                                }
+                                    },
+                            // Messages for form validation
+                            messages:
+                                    {
+                                        login:
+                                                {
+                                                    required: 'Please enter your login'
+                                                },
+                                        email:
+                                                {
+                                                    required: 'Please enter your email address',
+                                                    email: 'Please enter a VALID email address'
+                                                },
+                                        password:
+                                                {
+                                                    required: 'Please enter your password'
+                                                },
+                                        passwordConfirm:
+                                                {
+                                                    required: 'Please enter your password one more time',
+                                                    equalTo: 'Please enter the same password as above'
+                                                },
+                                        firstname:
+                                                {
+                                                    required: 'Please select your first name'
+                                                },
+                                        lastname:
+                                                {
+                                                    required: 'Please select your last name'
+                                                },
+                                        gender:
+                                                {
+                                                    required: 'Please select your gender'
+                                                },
+                                        terms:
+                                                {
+                                                    required: 'You must agree with Terms and Conditions'
+                                                }
+                                    },
+                            // Do not change code below
+                            errorPlacement: function(error, element)
+                            {
+                                error.insertAfter(element.parent());
+                            }
+                        });
+            });
+        </script>
+    </body>
+</html>

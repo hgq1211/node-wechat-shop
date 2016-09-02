@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+        <%- include head.html%>
+        <!--online editer-->
+        <link rel="stylesheet" type="text/css" href="style/wangEditor.min.css">
+        <link href="style/weibo.css" rel="stylesheet" type="text/css" media="screen">
+        <!--<link href="style/one-page.css" rel="stylesheet" type="text/css" media="screen">-->
+        <script src="js/paging.js" type="text/javascript"></script>
+
+    <body onload="checkCookie()">
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #d58512">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        提示信息
+                    </h4>
+                </div>
+                <div class="modal-body">
+                   输入内容不能为空！
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="/" >首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                            <li class="dropdown">
+                            <a href="item_show">特色展示</a>
+                        </li>
+                        <!--menu Portfolio li end here-->
+                        <li class="dropdown active">
+                            <a href="" >博客</a>
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown">
+                            <a href="/shop_home">商城</a>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="dropdown">
+                            <a href="about">关于我们</a>
+
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->
+                        <li class="dropdown " id="user_name"></li>
+                        <li class="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-8">
+                        <h4>Blog timeline</h4>
+                    </div>
+                    <div class="col-sm-4 scroll-to text-right" id="text">
+                       <a  class="btn btn-primary" href="#writeblog"><strong>发博文</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumbs-->
+        <div class="divide40" id="top"></div>
+        <!--=== Content Part ===-->
+        <div class="container"  id="outdiv">
+            <div id="innerdiv">
+            <ul class="timeline" id="content">
+                <%
+                if(blog)
+                blog.forEach(function(blog,index){
+                %>
+                <%
+                if(index%2==0){%>
+                <li><% };%>
+                    <%
+                    if(index%2!=0){%>
+                <li class="timeline-inverted"><%};%>
+                    <div class="timeline-badge primary">
+                        <%if(blog.image_id==null){%>
+                        <i class="fa fa-file-word-o"></i><%};%>
+                        <%if(blog.image_id!=null){%>
+                        <i class="fa fa-image"></i><%};%></div>
+                    <div class="timeline-panel wow animated fadeInUp">
+                        <div class="timeline-heading">
+                            <img class="img-responsive" src="img/img-6.jpg" alt=""/>
+                        </div>
+
+                        <div class="timeline-body">
+                            <!--<h2><a href="/user_blogDetail?blog_id=1"><%=blog.blog_title%></a></h2>-->
+                            <ul class="list-inline post-detail">
+                                <li>by <a href="#"><%=blog.user_nickName%></a></li>
+                                <li><i class="fa fa-calendar"></i> <%=blog.published_data%></li>
+                            </ul>
+                            <%- blog.blog_text%>
+                            <a class="btn border-theme" href="/user_blogDetail?blog_id=<%=blog.blog_id%>">Read More</a>
+                        </div>
+                    </div>
+                </li><%});%>
+
+                <li class="clearfix" style="float: none;"></li>
+
+            </ul>
+            <div class="alert alert-warning col-md-8 col-md-offset-2" style="display: none">
+                <a href="#" class="close" data-dismiss="alert">
+                    &times;
+                </a>
+                <strong>提示！</strong>您暂未发表博文，现在就留下您的文笔!
+            </div>
+            <div id="pagination">
+                <ul class="pagination" >
+
+                <%
+                    var perFive=count%5==0?count/5:Math.floor(count/5)+1;
+
+                    if(count>=5){%>
+                    <li id="prev"><a href="#<%=current%>" onclick="pagePrve('<%=6-i+5*j%>')">&laquo;</a></li>
+                    <%
+
+                    for(var i=5,j=1;i;i--){%>
+                    <li class="<%=6-i+5*j%>"><a href="#<%=6-i+5*j%>" onclick="pageCurrent('<%=6-i+5*j%>')"><%=6-i+5*j%></a></li>
+                    <%} j++;%>
+                    <li id="next"><a href="#<%=6-i+5*j%>" onclick="pageNext('<%=6-i+5*j%>')">&raquo;</a></li>
+                    <%}
+                    if(count<5){%>
+                    <%
+                    for(var i=1;count;count--,i++){%>
+                    <li class="<%=i%>" id="1"><a href="#<%=i%>" onclick="pageCurrent('<%=i%>')"><%=i%></a></li>
+                    <%}}%>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="divide5"></div>
+        <div class="col-md-10 col-md-offset-1">
+        <div class="container padded-section" id="writeblog">
+
+            <textarea id="editor-trigger" ></textarea>
+
+            <div class="divide5"></div>
+            <button class="btn btn-primary btn-lg col-md-2 col-md-offset-9" id="submit" onclick="submit()"><strong>发表</strong></button>
+        </div>
+        </div>
+
+        <!--/container-->
+        <!-- End Content Part -->
+        <!--scripts and plugins -->
+    <%- include user_footer.html%>
+        <script type="text/javascript" src="js/wangEditor.js"></script>
+            <script src="js/one-page.js" type="text/javascript"></script>
+        <script>
+
+            $(function(){
+                status();
+                if(!'<%=blog%>'.length){
+                    $(".alert").show();
+                    $("#content").hide();
+                }
+                if('<%=blog%>'.length) {
+                    $(".alert").hide();
+                    $("#content").show();
+                }
+            });
+
+            //获取用户登录状态
+            function status(){
+                var qquser = '<%=qquser%>' || "undefined";
+                var user = '<%=user%>' || "undefined";
+                if (user == 'undefined' || user == 'null') {
+                    if (qquser == 'undefined' || qquser == 'null') {
+                        $("#login").show();
+                        editor.disable();
+                        editor.$txt.append('<p>请先<a href="user_login?user_blog"><strong>登录</strong></a>或<a href="user_register"><strong>注册</strong></a>后再发表博客。</p>');
+                        }
+			else{
+                   	 	$("#user_name").load("/user_qqname");
+                    		editor.enable();
+			}
+                    }
+                else {
+                    $("#user_name").load("/user_getNickName");
+                    editor.enable();
+                }
+              }
+        </script>
+        <!--在线编译器-->
+        <script type="text/javascript">
+            // 阻止输出log
+            // wangEditor.config.printLog = false;
+
+            var editor = new wangEditor('editor-trigger');
+
+            // 上传图片
+            editor.config.uploadImgUrl = '/upload';
+            editor.create();
+            function submit(){
+                var submit=editor.$txt.html();
+                var text = editor.$txt.text();
+               // alert();
+                var imgs = editor.$txt.find('img');
+                if(text=="请先登录或注册后再发表博客。") {
+                    window.location="user_login?user_blog";
+                    return false;
+                }
+                if(text==""&&!imgs.length){
+                    $('#myModal').modal({
+                        show:true
+                    });
+                    return false;
+                }
+               // alert(submit);
+                $.ajax({
+                    type:"post",
+                    url:"user/blog",
+                    datatype:"json",
+                    data:{submit:submit},
+                    success:function(data){
+                        //swal("标签提交成功!", "", "success");
+                        window.location.href="";
+                    }
+
+                })
+            }
+
+        </script>
+
+    </body>
+</html>

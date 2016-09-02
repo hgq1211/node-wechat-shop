@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+        <%- include head.html%>
+        <!--sky form pro css-->
+        <link href="sky-form/css/sky-forms.css" rel="stylesheet">
+        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101299590" data-redirecturl="http://our3dmark.com" charset="utf-8"></script>
+    <body onLoad="checkCookie()">
+
+        <!--navigation -->
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="ASSAN"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown active">
+                            <a href="/" >首页</a>
+                        </li>
+                        <!--menu home li end here-->
+                        <li class="dropdown">
+                            <a href="/user_blog">博客</a>
+                        </li>
+                        <!--menu blog li end here-->
+                        <li class="dropdown">
+                            <a href="/shop_home">商城</a>
+                        </li> <!--menu Shop li end here-->
+                        <!--mega menu-->
+                        <li class="dropdown">
+                            <a href="/about">关于我们</a>
+                        </li> <!--menu Features li end here-->
+                        <!--mega menu end-->    
+
+                        <li class="dropdown " data-animate="animated fadeInUp" style="z-index:500;">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                            <ul class="dropdown-menu search-dropdown animated fadeInUp">
+                                <li id="dropdownForm">
+                                    <div class="dropdown-form">
+                                        <form class=" form-inline">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="search...">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-theme-bg" type="button">enter</button>
+                                                </span>
+                                            </div><!--input group-->
+                                        </form><!--form-->
+                                    </div><!--.dropdown form-->
+                                </li><!--.drop form search-->
+                            </ul><!--.drop menu-->
+                        </li> <!--menu search li end here-->
+                        <li class="dropdown">
+                            <a href="" class=" dropdown-toggle"><i class="fa fa-shopping-cart"></i>(0)</a>
+                        </li>
+                       <!--menu cart li end here-->
+
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--container-->
+        </div><!--navbar-default-->
+
+        <div class="breadcrumb-wrap breadcrumb-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>login</h4>
+                        <p>Log into your account</p>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="/">首页</a></li>
+                            <li><strong>用户登录</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb light-->
+        <div class="divide5"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-6 col-sm-offset-3 sky-form-login-register">
+                    <div class="margin30">
+
+                        <form id="sky-form" class="sky-form">
+
+                            <h3 class="text-center">Log in to your account</h3>
+                            <fieldset>					
+                                <section>
+                                    <div class="row">
+                                        <label class="label col col-3 ">Your Username</label>
+                                        <div class="col col-9">
+                                            <label class="input">
+                                                <i class="icon-append fa fa-user"></i>
+                                                <input type="text" name="username">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="row">
+                                        <label class="label col col-3">Enter Password</label>
+                                        <div class="col col-9">
+                                            <label class="input">
+                                                <i class="icon-append fa fa-lock"></i>
+                                                <input type="password" name="password">
+                                            </label>
+                                            <div class="note"><a href="#sky-form2" class="modal-opener">Forgot password?</a></div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col col-3 col-xs-1"></div>
+                                        <div class="col col-3 col-xs-3">
+                                            <label class="checkbox"><input type="checkbox" name="remember" value="checked" checked><i></i>Remember</label></div>
+
+                                    <div class="col col-sm-5 col-md-6 col-xs-6">
+                                        <a href="/user_register" class="btn btn-link btn-lg">注册</a>
+                                        <button type="button" class="btn btn-theme-bg btn-lg" onclick="Login()">登录</button></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-4 col-xs-3"></div>
+                                        <div class="col col-6 col-xs-6">
+                                            <span id="qqLoginBtn"></span>
+                                            <script type="text/javascript">
+
+                                                QC.Login({
+                                                    btnId:"qqLoginBtn" ,
+                                                    size: "A_L"//插入按钮的节点id
+                                                },function(reqData, opts){
+                                                    QC.Login.getMe(function(openId, accessToken){
+                                                    qqLogin(reqData,openId, accessToken);
+                                                    })
+                                                });
+
+                                              // QC.api(get_info, 101299590);
+                                            </script>
+
+                                            <!--<a href="javascript:void(0)"> <img src="img/qqLogin.png"></a></div>-->
+                                    </div>
+                                        </div>
+                                </section>
+
+                            </fieldset>
+                        </form>
+                    </div><!--login form wrap end-->
+                    </div>
+                    <form action="sky-form/php_files/demo-login-process.php" id="sky-form2" class="sky-form sky-form-modal">
+                        <header>Password recovery</header>
+
+                        <fieldset>					
+                            <section>
+                                <label class="label">E-mail</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-envelope-o"></i>
+                                    <input type="email" name="email" id="email">
+                                </label>
+                            </section>
+                        </fieldset>
+
+                        <footer>
+                            <button type="submit" name="submit" class="button">Submit</button>
+                            <a href="#" class="button button-secondary modal-closer">Close</a>
+                        </footer>
+
+                        <div class="message">
+                            <i class="fa fa-check"></i>
+                            <p>Your request successfully sent!<br><a href="#" class="modal-closer">Close window</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <%- include shop_footer.html%>
+        <!--sky form plugin js-->
+        <script src="sky-form/js/jquery.form.min.js" type="text/javascript"></script>
+        <script src="sky-form/js/jquery.modal.js" type="text/javascript"></script>
+        <script src="sky-form/js/jquery.validate.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(function()
+            {
+                // Validation for login form
+                $("#sky-form").validate(
+                        {
+                            // Rules for form validation
+                            rules:
+                                    {
+                                        username:
+                                                {
+                                                    required: true
+                                                },
+                                        password:
+                                                {
+                                                    required: true,
+                                                    minlength: 6,
+                                                    maxlength: 20
+                                                }
+                                    },
+                            // Messages for form validation
+                            messages:
+                                    {
+                                        username:
+                                                {
+                                                    required: 'Please enter your username',
+                                                },
+                                        password:
+                                                {
+                                                    required: 'Please enter your password'
+                                                }
+                                    },
+                            // Do not change code below
+                            errorPlacement: function(error, element)
+                            {
+                                error.insertAfter(element.parent());
+                            }
+                        });
+
+
+                // Validation for recovery form
+                $("#sky-form2").validate(
+                        {
+                            // Rules for form validation
+                            rules:
+                                    {
+                                        email:
+                                                {
+                                                    required: true,
+                                                    email: true
+                                                }
+                                    },
+                            // Messages for form validation
+                            messages:
+                                    {
+                                        email:
+                                                {
+                                                    required: 'Please enter your email address',
+                                                    email: 'Please enter a VALID email address'
+                                                }
+                                    },
+                            // Ajax form submition					
+                            submitHandler: function(form)
+                            {
+                                $(form).ajaxSubmit(
+                                        {
+                                            beforeSend: function()
+                                            {
+                                                $('#sky-form button[type="submit"]').attr('disabled', true);
+                                            },
+                                            success: function()
+                                            {
+                                                $("#sky-form2").addClass('submited');
+
+                                            }
+                                        });
+                            },
+                            // Do not change code below
+                            errorPlacement: function(error, element)
+                            {
+                                error.insertAfter(element.parent());
+                            }
+                        });
+                    });
+            <!-- 记住密码 -->
+            function getCookie(c_name)      //根据分隔符每个变量的值
+            {
+                if (document.cookie.length > 0) {
+                    c_start = document.cookie.indexOf(c_name + "=")
+                    if (c_start != -1) {
+                        c_start = c_start + c_name.length + 1;
+                        c_end = document.cookie.indexOf("^",c_start);
+                        if (c_end==-1)
+                            c_end=document.cookie.length;
+                        return unescape(document.cookie.substring(c_start,c_end));
+                    }
+                }
+                return "";
+            }
+
+            function setCookie(c_name, n_value, p_name, p_value, expiredays)        //设置cookie
+            {
+
+                var exdate = new Date();
+                exdate.setDate(exdate.getDate() + expiredays);
+                document.cookie = c_name + "=" + escape(n_value) + "^" + p_name + "=" + escape(p_value) + ((expiredays == null) ? "" : "^;expires=" + exdate.toGMTString());
+                console.log(document.cookie)
+            }
+
+            function checkCookie()      //检测cookie是否存在，如果存在则直接读取，否则创建新的cookie
+            {
+                //alert(document.cookie)
+                var username = getCookie('username');
+                var password = getCookie('password');
+                if (username != null && username != "") {
+                    if(password != null && password != "") {
+                        $("input[name='username']").val(username);
+                        $("input[name='password']").val(password);
+                    }
+                    else{
+                        $("input[name='username']").val(username);
+                        $("input[name='password']").focus();
+                    }
+                }
+                else {
+                    $("input[name='username']").focus();
+
+                }
+            }
+            //清除cookie
+            function cleanCookie (c_name, p_name) {     //使cookie过期
+                document.cookie = c_name + "=" + ";" + p_name + "=" + ";expires=Thu, 01-Jan-70 00:00:01 GMT";
+            }
+            //ajax登录实现
+            function Login(){
+                var nickname=$("input[name='username']").val();
+                var password=$("input[name='password']").val();
+                var url = location.search; //获取url中"?"符后的字串
+                 var preurl = url.substring(url.indexOf("?")+1);
+                $.ajax({
+                    type:"post",
+                    url:"user/login",
+                    data:{nickname:nickname,password:password},
+                    datatype:"json",
+                    success:function(data){
+                        var user=data.user_nickName||"undefined";
+                        //alert(user);
+                        if(user=="undefined"){
+                            window.location.href="";
+                        }
+                        else {
+                            if($("input:checkbox:checked").val()=='checked'){
+                                setCookie('username', nickname, 'password', password, 30);
+                            }
+                            else {
+
+                                setCookie('username', nickname, 'password','', 90);
+                            }
+                            window.location.href=preurl;
+                        }
+                    }
+                })
+            }
+            function qqLogin(obj,openId, accessToken){
+                var url = location.search; //获取url中"?"符后的字串
+                var preurl = url.substring(url.indexOf("?")+1);
+                $.ajax({
+                        type:"post",
+                        url:"/qqLogin",
+                        data:{userobj:obj,openId:openId,
+                            accessToken:accessToken},
+                    success:function(){
+                        window.location.href=preurl;
+                    }
+                    })
+                    }
+
+        </script>
+    </body>
+</html>
